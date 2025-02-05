@@ -6,8 +6,8 @@
 :root {
     --cor0: black;
     --cor1: white;
-    --cor2: #E1B346;
-    --cor3: #d7be84;
+    --cor2: #676c7cc4;
+    --cor3: #37363a;
 
     --fonte-padrao: "Libre Baskerville", serif;
     --fonte-titulo: "Playfair Display SC", serif;;
@@ -30,11 +30,11 @@ body {
 header {
     min-height: 150px;
     text-align: center;
-    padding: 40px 0px;
+    padding: 0px 0px;
 }
 
 header img {
-    width: 35%;
+    width: 200px;
 }
 
 header h2 {
@@ -132,7 +132,7 @@ span {
 }
 
 main img {
-    width: 35%;
+    width: 300PX;
     display: block;
     margin: auto; 
 }
