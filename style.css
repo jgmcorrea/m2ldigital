@@ -28,25 +28,41 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center; /* Centraliza logo e menu */
-    padding: 20px 0;
+    justify-content: center;
+    padding: 20px;
+    transition:all 0.3s ease-in-out
 }
 
 /* Navbar quando a rolagem desce */
 header.scrolled {
     background-color: #32343a; /* Cor do fundo após rolagem */
-    padding: 10px 0;
+    padding: 10px 50px;
+    flex-direction: row; /* Muda para layout horizontal */
+    justify-content: space-between;
+}
+
+/* Ajustes para quando o header estiver fixo */
+header.scrolled .logo {
+    order: 2; /* Move a logo para a direita */
+}
+
+header.scrolled .navbar {
+    order: 1; /* Move os links para a esquerda */
 }
 
 /* Logo */
 .logo img {
     width: 120px; /* Ajuste o tamanho conforme necessário */
     height: auto;
+    display: flex;
+    align-items: center;
 }
 
 /* Navbar */
 .navbar {
     display: flex;
     gap: 20px;
+    align-items: center;
     margin-top: 10px; /* Espaçamento entre logo e menu */
 }
 
@@ -60,33 +76,9 @@ header.scrolled {
     transition-duration: 3ms;
 }
 
-header nav a:hover{
+.navbar a:hover{
     background-color: rgb(55, 70, 82);
     color: white;
-}
-
-/* Fixado no topo quando rolar */
-header.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #32343a; /* Cor de fundo quando rolar */
-    padding: 10px 0;
-}
-
-header.fixed .logo {
-    justify-content: flex-end; /* Logo à esquerda quando o menu se fixa */
-    margin-left: 20px;
-}
-
-header.fixed nav {
-    justify-content: flex-start; /* Menu à esquerda quando fixado */
-    margin-left: 100px;
-}
-
-header.fixed nav a {
-    color: white;
-    font-size: 16px;
 }
 
 /* Estrutura das sections divididas */
@@ -97,8 +89,7 @@ section {
     text-align: center; /* Alinha o texto à esquerda dentro de cada lado */
     padding: 100px 20px;
     max-width: 1000px;
-    margin: 0 auto;
-    margin-bottom: 40px; /* Diminui o espaço entre as seções */
+    margin: 0 auto 40px;
     gap: 100px; /* Espaçamento entre título e texto */
 }
 
@@ -122,6 +113,25 @@ section#agencia {
     font-size: 18px;
     line-height: 1.5;
     
+}
+
+.section-content-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Cria 2 colunas */
+    gap: 20px; /* Define o espaçamento entre os quadrantes */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.quadrante-texto {
+    background-color: white; /* Fundo branco */
+    color: rgb(55, 70, 82); /* Mesma cor do fundo do body */
+    padding: 20px;
+    border-radius: 8px; /* Bordas arredondadas */
+    font-size: 22px;
+    font-weight: bold;
 }
 
 /* Altera o link*/
@@ -154,6 +164,14 @@ section#agencia {
     width: 100%;
 }
 
+@media (max-width: 768px) {
+    #atuacao {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
 /* Quadrantes */
 .quadrantes {
     display: grid; /* Usando grid para controle mais preciso da distribuição */
@@ -162,6 +180,13 @@ section#agencia {
     width: 80%; /* Aumentando a largura para 80% */
     margin: 0 auto; /* Centralizando os quadrantes */
     padding: 0 0; /* Um pouco de espaçamento superior e inferior */
+}
+
+@media (max-width: 768px) {
+    .quadrantes {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
 }
 
 /* Quadrante individual */

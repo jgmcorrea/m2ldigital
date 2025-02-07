@@ -1,10 +1,9 @@
 window.addEventListener('scroll', function () {
     const header = document.querySelector('header');
 
-    // Quando o scroll passar de 100px
     if (window.scrollY > 100) {
-        header.classList.add('fixed');
+        header.classList.add('scrolled');
     } else {
-        header.classList.remove('fixed');
+        header.classList.remove('scrolled');
     }
 });
