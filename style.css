@@ -1,13 +1,9 @@
 @charset "UTF-8";
-
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-/* Fundo aplicado ao site inteiro */
 body {
     background: radial-gradient(circle, rgb(96, 122, 137) 0%, rgb(55, 70, 82) 100%);
     color: white;
@@ -15,57 +11,44 @@ body {
     min-height: 100vh;
     padding-top: 70px;
 }
-
-/* Inicial - Header Transparente */
-/* Header fixo no topo */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: transparent; /* Mantenha transparente quando estiver no topo */
+    background-color: transparent; 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza logo e menu */
+    align-items: center; 
     justify-content: center;
     padding: 20px;
     transition:all 0.3s ease-in-out
 }
-
-/* Navbar quando a rolagem desce */
 header.scrolled {
-    background-color: #32343a; /* Cor do fundo após rolagem */
+    background-color: #32343a; 
     padding: 10px 50px;
-    flex-direction: row; /* Muda para layout horizontal */
+    flex-direction: row; 
     justify-content: space-between;
 }
-
-/* Ajustes para quando o header estiver fixo */
 header.scrolled .logo {
-    order: 2; /* Move a logo para a direita */
+    order: 2; 
 }
-
 header.scrolled .navbar {
-    order: 1; /* Move os links para a esquerda */
+    order: 1; 
 }
-
-/* Logo */
 .logo img {
-    width: 120px; /* Ajuste o tamanho conforme necessário */
+    width: 120px; 
     height: auto;
     display: flex;
     align-items: center;
 }
-
-/* Navbar */
 .navbar {
     display: flex;
     gap: 20px;
     align-items: center;
-    margin-top: 10px; /* Espaçamento entre logo e menu */
+    margin-top: 10px; 
 }
-
 .navbar a {
     text-decoration: none;
     color: rgb(255, 255, 255);
@@ -75,95 +58,99 @@ header.scrolled .navbar {
     border-radius: 5px;
     transition-duration: 3ms;
 }
-
 .navbar a:hover{
     background-color: rgb(55, 70, 82);
     color: white;
 }
-
-/* Estrutura das sections divididas */
 section {
     display: flex;
-    align-items: center; /* Alinha os itens verticalmente */
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    text-align: center; /* Alinha o texto à esquerda dentro de cada lado */
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
     padding: 100px 20px;
     max-width: 1000px;
     margin: 0 auto 40px;
-    gap: 100px; /* Espaçamento entre título e texto */
+    gap: 100px; 
 }
-
 section#agencia {
-    padding-top: 300px; /* Ajuste o valor conforme necessário */
+    padding-top: 300px; 
 }
-
-/* Define que cada lado ocupa metade do espaço */
 .section-content {
     flex: 1;
 }
-
-/* Ajusta o título para quebrar linhas naturalmente */
 .section-content h1 {
     font-size: 40px;
-    max-width: 100%; /* Permite quebra de linha */
+    max-width: 100%; 
 }
-
-/* Define largura do texto */
 .section-content p {
     font-size: 18px;
     line-height: 1.5;
     
 }
-
+#agencia {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: center;
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.section-photo img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+@media (max-width: 768px) {
+    #agencia {
+        grid-template-columns: 1fr; 
+        text-align: center; 
+    }
+.section-photo {
+        order: -1; 
+    }
+}
 .section-content-2 {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Cria 2 colunas */
-    gap: 20px; /* Define o espaçamento entre os quadrantes */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
     justify-content: center;
     align-items: center;
     text-align: center;
     flex: 1;
 }
-
 .quadrante-texto {
-    background-color: white; /* Fundo branco */
-    color: rgb(55, 70, 82); /* Mesma cor do fundo do body */
+    background-color: white; 
+    color: rgb(55, 70, 82); 
     padding: 20px;
-    border-radius: 8px; /* Bordas arredondadas */
+    border-radius: 8px; 
     font-size: 22px;
     font-weight: bold;
 }
-
-/* Altera o link*/
-.section-content a {
+.section-content-2 a {
     text-decoration: none;
     color: rgb(55, 70, 82);
-    font-size: 18px;
+    font-size: 22px;
     padding: 0px 5px;
     background-color: white;
     border-radius: 5px;
     transition: background 0.3s, color 0.3s;
 }
-
-.section-content a:hover {
+.section-content-2 a:hover {
     background-color: rgb(55, 70, 82);
     color: white;
 }
-
-/* Reversão da ordem para a segunda section */
 .section-reverse {
     flex-direction: row-reverse;
 }
-
-/* Nova Section */
 #atuacao {
     display: flex;
     justify-content: space-between;
     padding: 100px 20px;
-    flex-direction: row-reverse; /* Título à direita */
+    flex-direction: row-reverse; 
     width: 100%;
 }
-
 @media (max-width: 768px) {
     #atuacao {
         flex-direction: column;
@@ -171,53 +158,41 @@ section#agencia {
         text-align: center;
     }
 }
-
-/* Quadrantes */
 .quadrantes {
-    display: grid; /* Usando grid para controle mais preciso da distribuição */
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-    gap: 50px; /* Reduzindo o gap para 50px para um espaçamento mais equilibrado */
-    width: 80%; /* Aumentando a largura para 80% */
-    margin: 0 auto; /* Centralizando os quadrantes */
-    padding: 0 0; /* Um pouco de espaçamento superior e inferior */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 50px; 
+    width: 80%; 
+    margin: 0 auto; 
+    padding: 0 0; 
 }
-
 @media (max-width: 768px) {
     .quadrantes {
         grid-template-columns: 1fr;
         width: 100%;
     }
 }
-
-/* Quadrante individual */
 .quadrante {
     text-align: center;
 }
-
-/* Ajuste para as imagens */
 .quadrante img {
-    width: 100%; /* Faz a imagem ocupar toda a largura do quadrante */
-    height: 200px; /* Definição da altura para as imagens */
-    object-fit: contain; /* Garante que a imagem não fique distorcida */
+    width: 100%; 
+    height: 200px; 
+    object-fit: contain; 
     border-radius: 8px;
-    display: block; /* Faz com que a imagem seja tratada como um bloco */
-    margin: 0 auto; /* Centraliza horizontalmente */
+    display: block; 
+    margin: 0 auto; 
 }
-
-/* Títulos das imagens */
 .quadrante p {
     margin-top: 10px;
     font-size: 16px;
     color: white;
     font-weight: bold;
 }
-
-/* Call to Action do WhatsApp */
 .cta-whatsapp {
     text-align: center;
     margin: 40px auto;
 }
-
 .cta-whatsapp a {
     display: inline-block;
     background-color: #25D366;
@@ -229,47 +204,42 @@ section#agencia {
     font-weight: bold;
     transition: 0.3s ease-in-out;
 }
-
 .cta-whatsapp a:hover {
     background-color: #1EBE5D;
 }
-
-/* Estilo para os links de redes sociais */
+@media (max-width: 768px) {
+    .cta-whatsapp a {
+        font-size: 30px; 
+        padding: 10px 20px; 
+    }
+}
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 100px; /* Espaçamento entre os ícones */
-    margin-bottom: 20px; /* Distância entre as imagens e o footer */
+    gap: 100px;
+    margin-bottom: 20px;
 }
-
 .social-links a img {
-    width: 70px; /* Ajuste o tamanho conforme necessário */
+    width: 70px;
     height: auto;
-    transition: transform 0.3s ease; /* Efeito de transformação para hover */
+    transition: transform 0.3s ease;
 }
-
 .social-links a img:hover {
-    transform: scale(1.1); /* Aumenta um pouco o tamanho ao passar o mouse */
+    transform: scale(1.1);
 }
-
-/* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
     color: white;
 }
-
 footer a {
     color: #1EBE5D;
     text-decoration: none;
     font-weight: bold;
 }
-
 footer a:hover {
     text-decoration: underline;
 }
-
-/* Rolagem suave */
 html {
     scroll-behavior: smooth;
 }
