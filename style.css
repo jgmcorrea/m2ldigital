@@ -123,7 +123,7 @@ section {
     padding: 100px 20px;
     max-width: 1000px;
     margin: 0 auto 40px;
-    gap: 100px; 
+    gap: 25px; 
 }
 .section-content {
     flex: 1;
@@ -145,7 +145,7 @@ section {
     grid-template-columns: repeat(2, 1fr); /* 2 colunas */
     gap: 20px; /* Espaçamento entre colunas */
     align-items: center; /* Centraliza verticalmente */
-    padding: 100px 20px;
+    padding: 100px 80px;
     max-width: 1200px;
     margin: 0 auto;
     padding-top: 300px;
@@ -174,7 +174,7 @@ section {
     display: flex;
     flex-direction: column; /* Coloca o título acima dos quadrantes */
     align-items: center; /* Centraliza o conteúdo */
-    padding: 100px 20px;
+    padding: 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -208,10 +208,14 @@ section {
 
     .quadrante img {
         height: auto;
+        width: 200px;
     }
 }
 /*------------------------------- PRODUTOS ----------------------------*/
 #produtos {
+    display: flex;
+    flex-direction: column; /* Coloca o título acima dos quadrantes */
+    align-items: center; /* Centraliza o conteúdo */
     padding: 100px 20px;
     max-width: 1200px;
     margin: 0 auto;
@@ -246,8 +250,8 @@ section {
 }
 
 .section-content-metodo h1 {
-    font-size: 2rem;
-    margin-bottom: 30px;
+    font-size: 40px;
+    margin-bottom: 20px;
 }
 
 .metodo-grid {
@@ -281,6 +285,16 @@ section {
     align-items: center;
     justify-content: center;
     min-height: 80px; /* Para manter o tamanho uniforme */
+}
+@media (max-width: 768px) {
+    .metodo-grid {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    }
+}
+@media (max-width: 480px) {
+    .metodo-grid {
+        grid-template-columns: 1fr; /* Apenas uma coluna */
+    }
 }
 /*------------------------------------- CTA ---------------------------------*/
 .cta-whatsapp {
