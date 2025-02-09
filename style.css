@@ -142,7 +142,7 @@ section {
 /*------------------------AGENCIA---------------------*/
 #agencia {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
     gap: 20px; /* Espaçamento entre colunas */
     align-items: center; /* Centraliza verticalmente */
     padding: 100px 20px;
@@ -155,6 +155,7 @@ section {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px;
 }
 
 /* Responsividade para telas menores */
@@ -237,6 +238,49 @@ section {
     .section-content-2 {
         grid-template-columns: 1fr;
     }
+}
+/*------------------------------- MÉTODO ----------------------------*/
+#metodo {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.section-content-metodo h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.metodo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.etapa {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #007BFF;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px; /* Para manter o tamanho uniforme */
+}
+
+.descricao {
+    font-size: 1rem;
+    background-color: #f8f9fa;
+    color: black;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px; /* Para manter o tamanho uniforme */
 }
 /*------------------------------------- CTA ---------------------------------*/
 .cta-whatsapp {
