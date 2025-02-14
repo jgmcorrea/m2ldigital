@@ -265,7 +265,7 @@ section {
 .etapa {
     font-size: 1.2rem;
     font-weight: bold;
-    background-color: #007BFF;
+    background-color: #32343a;
     color: white;
     padding: 20px;
     border-radius: 5px;
@@ -341,7 +341,7 @@ section {
     transform: scale(1.1);
 }
 
-/* Botão "Voltar ao Topo" */
+/* -----------------------------Botão "Voltar ao Topo"---------------------------- */
 #back-to-top {
     display: none;
     position: fixed;
